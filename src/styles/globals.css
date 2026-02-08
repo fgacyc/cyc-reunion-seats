@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.shimmer {
+  color: grey;
+  display: inline-block;
+  mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/350% 100%;
+  animation: shimmer 5s infinite;
+}
+
+.fast-shimmer {
+  display: inline-block;
+  mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/350% 100%;
+  animation: fast-shimmer 2.5s infinite;
+}
+
+@keyframes fast-shimmer {
+  100% {
+    mask-position: left;
+  }
+}
+@keyframes shimmer {
+  50% {
+    mask-position: left;
+  }
+  50.01% {
+    mask-position: right;
+  }
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.swiper-free-mode > .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.keen-slider__slide {
+  width: 100% !important;
+}
